@@ -17,7 +17,7 @@ npm install -g npm-deps-list
 
 then:
 
-```
+```bash
 cd path-to-project-with-package.json
 npm install # or yarn
 ndl
