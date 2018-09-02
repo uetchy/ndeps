@@ -7,7 +7,7 @@ Pretty print npm dependencies on your terminal.
 ## Key features
 
 - Show package description and its version
-- Click package name on the list to jump to their homepage (iTerm2 exclusive)
+- Click on package name to jump to their homepage (iTerm2 exclusive)
 
 ## Usage
 
