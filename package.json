@@ -11,7 +11,9 @@
   "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io/)",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.4.1"
+    "chalk": "^2.4.1",
+    "execa": "^1.0.0",
+    "listr": "^0.14.2"
   },
   "devDependencies": {}
 }
