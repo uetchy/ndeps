@@ -1,13 +1,13 @@
 # npm-deps-list
 
-Pretty print npm dependencies on terminal.
+Pretty print npm dependencies on your terminal.
 
 ![screenshot](https://uetchy.github.io/npm-deps-list/screen.png)
 
-## Key feature
+## Key features
 
-- Show package's description and version
-- Click to package name to jump to their homepage (iTerm2 exclusive)
+- Show package description and its version
+- Click package name on the list to jump to their homepage (iTerm2 exclusive)
 
 ## Usage
 
