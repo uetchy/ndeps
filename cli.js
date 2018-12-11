@@ -2,8 +2,6 @@
 
 const path = require('path')
 const chalk = require('chalk')
-const Listr = require('listr')
-const execa = require('execa')
 
 function hyperlink(name, url) {
   return `\x1b]8;;${url}\x07${name}\x1b]8;;\x07`
@@ -51,12 +49,8 @@ function listDeps() {
   }
 }
 
-new Listr([
-  {
-    title: 'npm install',
-    task: () => execa('npm', ['install']),
-  },
-])
-  .run()
-  .then(ctx => listDeps())
-  .catch(err => console.error(err))
+try {
+  listDeps()
+} catch (err) {
+  console.error(err)
+}
