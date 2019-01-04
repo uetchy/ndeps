@@ -1,13 +1,16 @@
 {
   "name": "npm-deps-list",
   "version": "0.3.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Pretty print npm dependencies on your terminal.",
+  "main": "cli.js",
   "scripts": {},
   "bin": {
     "ndl": "cli.js"
   },
-  "keywords": [],
+  "keywords": [
+    "npm",
+    "dependency"
+  ],
   "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io/)",
   "license": "MIT",
   "dependencies": {

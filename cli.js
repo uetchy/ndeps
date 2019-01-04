@@ -24,9 +24,9 @@ function listDeps() {
   const pkg = require(pkgPath)
 
   const deps = pkg.dependencies
-  const devDeps = pkg.devDependencies
-
   const depsCount = deps ? Object.keys(deps).length : 0
+
+  const devDeps = pkg.devDependencies
   const devDepsCount = devDeps ? Object.keys(devDeps).length : 0
 
   console.log()
