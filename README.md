@@ -1,8 +1,8 @@
-# relyon
+# ndeps
 
 Pretty print npm dependencies on your terminal.
 
-![screenshot](https://uetchy.github.io/relyon/screen.png)
+![screenshot](https://uetchy.github.io/ndeps/screen.png)
 
 ## Key features
 
@@ -12,19 +12,19 @@ Pretty print npm dependencies on your terminal.
 ## Usage
 
 ```bash
-npm install -g relyon
-yarn global add relyon
+npm install -g ndeps
+yarn global add ndeps
 ```
 
 then:
 
 ```bash
 cd /path/to/yourProject
-relyon
+ndeps
 ```
 
 for globally installed packages:
 
 ```bash
-relyon --global
+ndeps --global
 ```

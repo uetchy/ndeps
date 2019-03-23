@@ -2,7 +2,7 @@ const assert = require('assert')
 const path = require('path')
 const { exec } = require('child_process')
 
-const bin = path.join(__dirname, '..', require('../package.json').bin.relyon)
+const bin = path.join(__dirname, '..', require('../package.json').bin.ndeps)
 
 describe('cli', () => {
   it('list deps', (done) => {

@@ -1,5 +1,5 @@
 {
-  "name": "relyon",
+  "name": "ndeps",
   "description": "Pretty print npm dependencies on your terminal.",
   "version": "2.0.0",
   "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io/)",
@@ -18,15 +18,15 @@
     "nyc": "^13.3.0"
   },
   "bin": {
-    "relyon": "cli.js"
+    "ndeps": "cli.js"
   },
   "bugs": {
-    "url": "https://github.com/uetchy/relyon/issues"
+    "url": "https://github.com/uetchy/ndeps/issues"
   },
   "files": [
     "cli.js"
   ],
-  "homepage": "https://github.com/uetchy/relyon",
+  "homepage": "https://github.com/uetchy/ndeps",
   "keywords": [
     "dependency",
     "npm",
@@ -35,6 +35,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uetchy/relyon.git"
+    "url": "https://github.com/uetchy/ndeps.git"
   }
 }
