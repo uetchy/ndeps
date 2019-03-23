@@ -14,9 +14,11 @@ function printDep(depName, depVersion) {
   ))
   console.log(
     chalk.yellow(hyperlink(dep.name, dep.homepage)),
-    chalk.gray(depVersion)
+    chalk.gray(depVersion),
+    dep.bin ? chalk.cyan(Object.keys(dep.bin).join(' ')) : ''
   )
-  console.log(' ', dep.description, '\n')
+  console.log(' ', dep.description)
+  console.log()
 }
 
 function listDeps() {
