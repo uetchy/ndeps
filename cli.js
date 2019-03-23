@@ -44,7 +44,8 @@ function printDep(depName, depVersion, packageRoot) {
 }
 
 function listDeps(argv) {
-  const packageRoot = argv.global
+  const isGlobal = argv.global
+  const packageRoot = isGlobal
     ? homedir() + '/.config/yarn/global'
     : process.cwd()
   const pkgPath = join(packageRoot, 'package.json')
@@ -68,7 +69,7 @@ function listDeps(argv) {
   const devDepsCount = devDeps ? Object.keys(devDeps).length : 0
 
   console.log()
-  console.log(chalk.bold(pkg.name))
+  console.log(chalk.bold(isGlobal ? 'global' : pkg.name))
   console.log(chalk.green(depsCount), 'dependencies')
   console.log(chalk.green(devDepsCount), 'devDependencies')
 
