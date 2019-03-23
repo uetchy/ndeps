@@ -45,7 +45,7 @@ function printDep(depName, depVersion, packageRoot) {
 
 function listDeps(argv) {
   const packageRoot = argv.global
-    ? omedir() + '/.config/yarn/global'
+    ? homedir() + '/.config/yarn/global'
     : process.cwd()
   const pkgPath = join(packageRoot, 'package.json')
 
