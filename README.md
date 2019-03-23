@@ -1,5 +1,7 @@
 # ndeps
 
+> Formerly `npm-deps-list`
+
 Pretty print npm dependencies on your terminal.
 
 ![screenshot](https://uetchy.github.io/ndeps/screen.png)
