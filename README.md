@@ -1,24 +1,30 @@
-# npm-deps-list
+# relyon
 
 Pretty print npm dependencies on your terminal.
 
-![screenshot](https://uetchy.github.io/npm-deps-list/screen.png)
+![screenshot](https://uetchy.github.io/relyon/screen.png)
 
 ## Key features
 
-- Show package description and its version
+- Show installed package description, executables, and its version
 - Click on package name to jump to their homepage (iTerm2 exclusive)
 
 ## Usage
 
 ```bash
-npm install -g npm-deps-list
+npm install -g relyon
+yarn global add relyon
 ```
 
 then:
 
 ```bash
-cd path-to-project-with-package.json
-npm install # or yarn
-ndl
+cd /path/to/yourProject
+relyon
+```
+
+for globally installed packages:
+
+```bash
+relyon --global
 ```

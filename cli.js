@@ -1,29 +1,65 @@
 #!/usr/bin/env node
 
-const path = require('path')
+const { join } = require('path')
 const chalk = require('chalk')
+const { homedir } = require('os')
+const yargs = require('yargs')
 
 function hyperlink(name, url) {
   return `\x1b]8;;${url}\x07${name}\x1b]8;;\x07`
 }
 
-function printDep(depName, depVersion) {
-  const dep = require(path.join(
-    process.cwd(),
-    `node_modules/${depName}/package.json`
-  ))
+function printDep(depName, depVersion, packageRoot) {
+  let dep
+  try {
+    dep = require(join(packageRoot, `node_modules/${depName}/package.json`))
+  } catch (err) {
+    switch (err.code) {
+      case 'MODULE_NOT_FOUND':
+        throw new Error(
+          `Cannot find "${depName}". Try \`npm install\` or \`yarn\` first?`
+        )
+      default:
+        throw err
+    }
+  }
+
+  let bin = ''
+  switch (typeof dep.bin) {
+    case 'string':
+      bin = dep.name
+      break
+    case 'object':
+      bin = Object.keys(dep.bin).join(' ')
+      break
+  }
+
   console.log(
     chalk.yellow(hyperlink(dep.name, dep.homepage)),
     chalk.gray(depVersion),
-    dep.bin ? chalk.cyan(Object.keys(dep.bin).join(' ')) : ''
+    chalk.cyan(bin)
   )
   console.log(' ', dep.description)
   console.log()
 }
 
-function listDeps() {
-  const pkgPath = path.join(process.cwd(), 'package.json')
-  const pkg = require(pkgPath)
+function listDeps(argv) {
+  const packageRoot = argv.global
+    ? omedir() + '/.config/yarn/global'
+    : process.cwd()
+  const pkgPath = join(packageRoot, 'package.json')
+
+  let pkg
+  try {
+    pkg = require(pkgPath)
+  } catch (err) {
+    switch (err.code) {
+      case 'MODULE_NOT_FOUND':
+        throw new Error('No package.json found in current directory')
+      default:
+        throw err
+    }
+  }
 
   const deps = pkg.dependencies
   const depsCount = deps ? Object.keys(deps).length : 0
@@ -39,20 +75,21 @@ function listDeps() {
   if (depsCount > 0) {
     console.log('\ndependencies:')
     for (const depName in deps) {
-      printDep(depName, deps[depName])
+      printDep(depName, deps[depName], packageRoot)
     }
   }
 
   if (devDepsCount > 0) {
     console.log('\ndevDependencies:')
     for (const depName in devDeps) {
-      printDep(depName, devDeps[depName])
+      printDep(depName, devDeps[depName], packageRoot)
     }
   }
 }
 
 try {
-  listDeps()
+  const { argv } = yargs.alias('global', 'g')
+  listDeps(argv)
 } catch (err) {
-  console.error(err)
+  console.error(err.message)
 }
