@@ -1,5 +1,5 @@
 <h1 align="center">📦 ndeps</h1>
-<p align="center">Pretty-print npm dependencies on your terminal.</p>
+<p align="center">Pretty-print npm dependencies in Terminal.</p>
 <img alt="ndeps" src="https://github.com/uetchy/ndeps/blob/master/.readme/screen2.png?raw=true" />
 
 > Formerly known as `npm-deps-list`
