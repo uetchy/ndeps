@@ -1,12 +1,10 @@
-<p align="center">
-	<h1>📦 ndeps</h1>
-	<p>Pretty-print npm dependencies on your terminal.</p>
-	<img alt="ndeps" src="https://github.com/uetchy/ndeps/blob/master/.readme/screen2.png?raw=true" />
-</p>
+<h1 align="center">📦 ndeps</h1>
+<p align="center">Pretty-print npm dependencies on your terminal.</p>
+<img alt="ndeps" src="https://github.com/uetchy/ndeps/blob/master/.readme/screen2.png?raw=true" />
 
 > Formerly known as `npm-deps-list`
 
-## Key features
+## Key Features
 
 - Show installed package description, executables, and its version
 - Click on package name to jump to their homepage (iTerm2 exclusive)
