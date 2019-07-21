@@ -1,7 +1,7 @@
 {
   "name": "ndeps",
   "description": "Pretty print npm dependencies on your terminal.",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io/)",
   "main": "cli.js",
   "scripts": {
