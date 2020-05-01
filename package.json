@@ -9,7 +9,7 @@
     "test": "nyc mocha"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "execa": "^4.0.0",
     "yargs": "^15.0.2"
   },
